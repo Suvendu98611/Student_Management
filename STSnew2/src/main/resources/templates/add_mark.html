@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Marks</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center">Add Marks</h2>
+    
+    <!-- ✅ Fixed: studentId instead of student.id -->
+    <form th:action="@{/students/{id}/marks/saveAll(id=${studentId})}" method="post">
+
+        <!--<input type="hidden" name="studentId" th:value="${studentId}" />-->
+
+        <div class="form-group">
+            <label>Math</label>
+            <input type="number" name="Math" class="form-control" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Science</label>
+            <input type="number" name="Science" class="form-control" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>English</label>
+            <input type="number" name="English" class="form-control" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Hindi</label>
+            <input type="number" name="Hindi" class="form-control" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Social Science</label>
+            <input type="number" name="Social Science" class="form-control" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Computer</label>
+            <input type="number" name="Computer" class="form-control" required min="0" max="100">
+        </div>
+
+        <button type="submit" class="btn btn-success">Save All Marks</button>
+        <a th:href="@{/students}" class="btn btn-secondary ml-2">Back</a>
+    </form>
+</div>
+</body>
+</html>
