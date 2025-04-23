@@ -12,7 +12,7 @@ public class Mark {
     private String subject;
     private int score;
 
-    private String status; // ✅ Add this field
+    private String status; 
 
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)
@@ -24,7 +24,7 @@ public class Mark {
         this.subject = subject;
         this.score = score;
         this.student = student;
-        this.status = score >= 30 ? "Pass" : "Fail"; // Optional default logic
+        this.status = score >= 30 ? "Pass" : "Fail"; 
     }
 
     // Getters and Setters
